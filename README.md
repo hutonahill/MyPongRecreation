@@ -25,6 +25,9 @@ GoDot uses a version of C# with a bunch of new methods.
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* The ball slows down over time.
+* Ball slows down over time.
 * None of the Labels update
-* Item 3
+* Ball Octagonally starts going straight up or down
+* Ball doest bounce properly
+* Ball moves paddles on collision
+* Game doesent reset on score

@@ -28,7 +28,7 @@ public partial class Ball : RigidBody2D
 
     public void ResetBall()
     {
-        Position = new Vector2(startX, startY);
+        GlobalPosition = new Vector2(startX, startY);
 
         // generate a random direction
         Tuple<int, int> direction = GetRandomDirection();
@@ -43,14 +43,16 @@ public partial class Ball : RigidBody2D
     }
 
     public void OnGoalRBodyEntered(Node2D body){
-        GD.Print("Goal Right");
-        ResetBall();
+        RightGoal = true;
     }
+
+    private bool RightGoal = false;
  
     public void OnGoalLBodyEntered(Node2D body){
-        GD.Print("Goal Left");
-        ResetBall();
+        LeftGoal = true;
     }
+
+    private bool LeftGoal = false;
 	
 	private Tuple<int, int> GetRandomDirection(){
         Random random = new Random();
@@ -69,5 +71,21 @@ public partial class Ball : RigidBody2D
 	public override void _Process(double delta){
 
 	}
+
+    public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+    {
+        if(LeftGoal == true){
+            GD.Print("Goal Left");
+            ResetBall();
+            LeftGoal = false;
+        }
+        else if(RightGoal == true){
+            GD.Print("Goal Right");
+            ResetBall();
+            RightGoal = false;
+        }
+
+        //GD.Print("IntegrateForces");
+    }
 
 }
