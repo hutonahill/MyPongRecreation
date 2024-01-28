@@ -8,7 +8,7 @@ I chose pong because its a great starting point for a game> it has player contro
 
 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Demo](https://youtu.be/DBcwUWUg23w)
 
 # Development Environment
 
@@ -18,16 +18,14 @@ GoDot uses a version of C# with a bunch of new methods.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [GoDot Docs](docs.godotengine.org/en/)
 * [GoDot Discord](https://discord.gg/4JBkykG)
 
-# Future Work
+# Current Issues
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 * Ball slows down over time.
 * None of the Labels update
 * Ball Octagonally starts going straight up or down
 * Ball doest bounce properly
 * Ball moves paddles on collision
-* Game doesent reset on score
+* Game doest reset on score
